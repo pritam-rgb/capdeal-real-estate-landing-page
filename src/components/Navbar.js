@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled, { css } from  'styled-components/macro';
 import { menuData } from '../data/MenuData';
 import { Button } from './Button';
+import {FaBars} from 'react-icons/fa';
 
 const Nav = styled.nav`
     display:flex;
@@ -12,7 +13,7 @@ const Nav = styled.nav`
     position:fixed;
     width:100%;
     height: 60px;
-    background : red;
+    // background : red;
 
 `;
 
@@ -29,10 +30,30 @@ const Logo = styled(Link)`
     ${NavLinks};
     font-style:italic;
 `;
-const MenuBars = styled.i``;
+const MenuBars = styled(FaBars)`
+    display:none;
+
+    @media screen and (max-width: 768px){
+        display:block;
+        background-image:url(${FaBars});
+        background-size:contain;
+        height:40px;
+        width:40px;
+        cursor:pointer;
+        position:absolute;
+        top:0;
+        right:0;
+        transform: translate(-50%,25%);
+    }
+`;
 const NavMenu = styled.div`
     display:flex;
     align-items:center;
+    margin-right: -48px;
+
+    @media screen and (max-width: 768px){
+        display:none;
+    }
 `;
 const NavMenuLinks=styled(Link)`
     ${NavLinks}
@@ -42,15 +63,19 @@ const NavBtn=styled.div`
     display:flex;
     align-items:center;
     margin-right:24px;
-`
+
+    @media screen and (max-width: 768px){
+        display:none;
+    }
+`;
 
 
-const Navbar = () => {
+const Navbar = ({toggle}) => {
     return (
         <div>
             <Nav>
                 <Logo to="/">Capdeal</Logo>
-                <MenuBars />
+                <MenuBars onClick={toggle}/>
                 <NavMenu>
                     {menuData.map((item,index)=>(
                         <NavMenuLinks to={item.link} key={index}>
