@@ -10,6 +10,7 @@ const HamberSection=styled.section`
     max-height:1100px;
     positon:relative;
     overflow:hidden;
+    margin-bottom:10px;
 `;
 
 const HamberWrapper=styled.div`
@@ -63,6 +64,7 @@ const HamberImage = styled.img`
 `;
 const HamberContent = styled.div`
     position:relative;
+    left:-20%;
     z-index:10;
     display:flex;
     flex-direction:column;
@@ -125,19 +127,19 @@ const length=slides.length;
 const timeout=useRef(null);
 
 
-// useEffect(()=>{
-//     const nextSlide=()=>{
-//         setCurrent(current=>(current===length-1 ? 0:current+1))
-//     }
+useEffect(()=>{
+    const nextSlide=()=>{
+        setCurrent(current=>(current===length-1 ? 0:current+1))
+    }
 
-//     timeout.current=setTimeout(nextSlide,2000);
+    timeout.current=setTimeout(nextSlide,3000);
 
-//     return function (){
-//         if(timeout.current){
-//             clearTimeout(timeout.current)
-//         }
-//     }
-// },[current,length])
+    return function (){
+        if(timeout.current){
+            clearTimeout(timeout.current)
+        }
+    }
+},[current,length])
 const nextSlide=()=> {
     if(timeout.current){
         clearTimeout(timeout.current)
@@ -170,7 +172,7 @@ if(!Array.isArray(slides) || slides.length <=0){
                                     <HamberImage src={slide.image} alt={slide.alt}/>
                                     <HamberContent>
                                         <h1>{slide.title}</h1>
-                                        <p>{slide.price}</p>
+                                        <p>{slide.area}</p>
                                         <Button 
                                         to={slide.path} 
                                         primary="true"

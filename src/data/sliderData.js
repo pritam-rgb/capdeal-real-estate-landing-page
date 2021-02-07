@@ -1,36 +1,36 @@
-import ImageOne from '../images/house-1.jpg.jpg';
-import ImageTwo from '../images/house-2.jpg.jpg';
-import ImageThree from '../images/house-3.jpg.jpg';
-import ImageFour from '../images/house-4.jpg.jpg';
+import ImageOne from '../images/bedroom.jpg';
+import ImageTwo from '../images/dining.jpg';
+import ImageThree from '../images/kitchen.jpg';
+import ImageFour from '../images/balcony.jpg';
 
 export const sliderData=[
     {
-        title:'Luxury Villa in Bali,indonesia',
-        price:'1250000',
+        title:'Bedroom',
+        area:'450 Sqft',
         path:'/homes',
         label:'View Home',
         image:ImageOne,
         alt:'House'
     },
     {
-        title:'Luxury Villa in Bali,indonesia',
-        price:'1250000',
+        title:'Dining',
+        area:'200 Sqft',
         path:'/homes',
         label:'View Home',
         image:ImageTwo,
         alt:'House'
     },
     {
-        title:'Luxury Villa in Bali,indonesia',
-        price:'1250000',
+        title:'Kitchen',
+        area:'250 Sqft',
         path:'/homes',
         label:'View Home',
         image:ImageThree,
         alt:'House'
     },
     {
-        title:'Luxury Villa in Bali,indonesia',
-        price:'1250000',
+        title:'Balcony',
+        area:'150 Sqft',
         path:'/homes',
         label:'View Home',
         image:ImageFour,
